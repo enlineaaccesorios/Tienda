@@ -1,0 +1,149 @@
+:root {
+    --color-prim: rgb(245, 114, 184);
+}
+
+/* titulo y menu navegador  */
+
+header {
+    text-align: center;
+    background-color: #ebead9;
+
+}
+
+.iconos-redes {
+    display: flex;                  /* Aplica flexbox para alinear los íconos */
+    justify-content: space-between; /* Coloca un ícono a la izquierda y otro a la derecha */
+    align-items: center;            /* Alinea verticalmente en el centro si es necesario */
+    width: 100%;                    /* Asegura que el contenedor ocupe el 100% del ancho */
+    margin-top: -88px;
+}
+.iconos-redes a {
+    display: inline-block; /* Mantiene los íconos en línea */
+}
+
+
+
+h1 {
+    color: var(--color-prim);
+}
+
+
+.btn-primary {
+    background-color: var(--color-prim);
+    /* Color de fondo */
+    border: 2px solid #000000;
+    border-radius: 9%;
+    /* Esquinas redondeadas */
+
+}
+
+.btn-primary:hover {
+    background-color: rgba(235, 100, 240, 0.9);
+    /* Color de fondo al pasar el mouse */
+    border-color: rgba(0, 0, 0, 0.9);
+    /* Color del borde al pasar el mouse */
+    box-shadow: 0 4px 4px;
+    /* Sombra para el efecto de profundidad */
+}
+
+
+
+
+
+/* fondo de pagina */
+
+.fondo {
+    background-image: url(images/fondo_rosa_pastel.png);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100vw;
+    /* Asegura que el cuerpo cubra toda la ventana */
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Hace que la imagen cubra todo el fondo */
+    background-position: center center;
+    /* Centra la imagen */
+
+}
+
+.card {
+    text-align: center;
+    margin-bottom: 10%;
+    border-radius: 15px ; /* Haz las esquinas un poco más redondeadas para un look moderno */
+    background-color: rgba(0, 0, 0, 0.2); /* Un color de fondo más suave y transparente */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Añade una sombra suave para darle profundidad */
+    max-width: 300px; /* Define un ancho máximo para evitar que la tarjeta se estire demasiado */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza los efectos al pasar el ratón */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Hace que la tarjeta crezca un poco al pasar el ratón */
+ }
+
+ 
+.card-img-top {
+    border-radius: 10px 10px 10px 10px; /* Redondea solo las esquinas superiores de la imagen */
+    max-height: 200px; /* Limita la altura de la imagen */
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    object-fit: cover; /* Asegura que la imagen no se deforme y se ajuste al contenedor */
+}
+
+.card-title {
+    font-size: 1.5rem; /* Aumenta el tamaño del título para que destaque */
+    font-weight: bold;
+    color: #f7f7f7;
+    margin-top: 10px;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #e0e0e0;
+}
+
+.footer {
+    font-size: 0.9rem;
+    color: #ffb800;
+    font-weight: bold;
+    background-color: #00000060;
+    border-radius: 10px;
+    padding: 5px 10px;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+    
+/* Media queries para pantallas más pequeñas (teléfonos) */
+@media (max-width: 480px) {
+    .fondo{
+        height: 100vh;
+        width: 100vw;
+
+
+    }
+    .card {
+        max-width: 100%;
+        margin: 10px auto;
+    }
+
+    .card-img-top {
+        max-width: 100%;
+        max-height: 120px;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+
+    .card-text {
+        font-size: 0.8rem;
+    }
+
+    .footer {
+        font-size: 0.7rem;
+        padding: 3px;
+    }
+}

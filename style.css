@@ -1,0 +1,300 @@
+:root {
+    --color-prim: rgb(245, 114, 184);
+}
+
+    /* titulo y menu-navegador  */
+
+    header {
+    
+        text-align: center;
+        background-color: #ebead9;
+        height: 85px;
+    }
+
+
+    /* propiedades de menu-navegador*/
+
+
+
+    .btn-primary {
+        background-color: var(--color-prim);
+        /* Color de fondo */
+        border: 2px solid #000000;
+        border-radius: 9%;
+        /* Esquinas redondeadas */
+
+    }
+
+    .btn-primary:hover {
+        background-color: rgba(235, 100, 240, 0.9);
+        /* Color de fondo al pasar el mouse */
+        border-color: rgba(0, 0, 0, 0.9);
+        /* Color del borde al pasar el mouse */
+        box-shadow: 0 4px 4px;
+        /* Sombra para el efecto de profundidad */
+    }
+
+
+
+    .iconos-redes{
+        display: flex;
+        position: relative;
+        justify-content: space-between; /* Coloca los elementos en extremos opuestos */
+        bottom: 78px;
+
+    }
+
+    .iconos-redes img{
+
+        width: 50px;
+
+    }
+    
+    /*propiedad de letra titulo*/
+    h1 {
+        color: var(--color-prim);
+    }
+
+
+    /* fondo de pagina */
+
+    .fondo {
+        background-image: url(images/fondo_rosa_pastel.png);
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        /* Asegura que la imagen no se repita y hace q se estire */
+        background-repeat: no-repeat;
+        /* Asegura que el cuerpo cubra toda la ventana */
+        background-size: cover;
+        /* Centra la imagen */
+        background-position: center center;
+    }
+
+    .card {
+        text-align: center;
+        margin-bottom: 10%;
+        background-color: rgba(0, 0, 0, 0.2); /* Un color de fondo más suave y transparente */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Añade una sombra suave para darle profundidad */
+        max-width: 300px; /* Define un ancho máximo para evitar que la tarjeta se estire demasiado */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza los efectos al pasar el ratón */
+    }
+
+
+    .card-img-top {
+        border-radius: 10px 10px 10px 10px; /* Redondea solo las esquinas superiores de la imagen */
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        object-fit: cover; /* Asegura que la imagen no se deforme y se ajuste al contenedor */
+    }
+
+    /* Establece un tamaño fijo para las imágenes del carrusel */
+    .carousel-item img {
+        width: 90%;  /* O ajusta según necesites */
+        height: 300px; /* Altura fija para todas las imágenes */
+        object-fit: cover; /* Esto ajusta la imagen dentro del contenedor manteniendo la proporción */
+    }
+
+    /* Asegura que las tarjetas mantengan un tamaño consistente */
+    .carousel-item .card {
+        width: 18rem;
+        height: 500px; /* Altura fija para las tarjetas */
+    }
+
+    /* Ajusta el contenido de la tarjeta */
+
+    .carousel-item .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Esto distribuye bien los elementos dentro de la tarjeta */
+        height: 100%; /* Asegura que ocupe el espacio total disponible */
+        
+    }
+
+    .card-title {
+        font-size: 1.8rem; /* Tamaño grande para resaltar el título */
+        font-weight: bold;
+        color: #ffffff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Añade sombra para darle más impacto */
+        
+    }
+
+    .card-text {
+        font-size: 1rem;
+        color: #d1d1d1;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .card-body button {
+        font-size: 1rem;
+        font-weight: bold;
+        color: #fff;
+        background-color: #f59ff5a6;
+        border: none;
+        border-radius: 5px;
+        padding: 8px 15px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 0%;
+    }
+
+    .card-body button:hover {
+        background-color: #ff00dd; /* Cambio de color al pasar el cursor */
+    }
+
+    .card-body button:focus {
+        outline: none;
+        box-shadow: 0 0 5px 2px rgb(226, 165, 213);
+    }
+
+
+
+
+/* Media queries para pantallas más pequeñas (teléfonos) */
+@media (min-width: 480px) {
+
+
+
+    /* titulo y menu navegador  */
+
+    header {
+        text-align: center;
+        background-color: #ebead9;
+        height: 110px;
+    }
+
+    /*propiedades de letra del titulo"*/
+
+    h1 {
+        color: var(--color-prim);
+    }
+
+
+
+
+
+    /* propiedades imagenes-iconos redes sociales*/
+
+    .iconos-redes{
+        display: flex;
+        position: relative;
+        justify-content: space-between; /* Coloca los elementos en extremos opuestos */
+        bottom: 78px;
+        height: 30px;
+
+    }
+
+
+
+    /* propiedades de menu-navegador*/
+
+
+
+    .btn-primary {
+        background-color: var(--color-prim);
+        /* Color de fondo */
+        border: 2px solid #000000;
+        border-radius: 9%;
+        /* Esquinas redondeadas */
+
+    }
+
+    .btn-primary:hover {
+        background-color: rgba(235, 100, 240, 0.9);
+        /* Color de fondo al pasar el mouse */
+        border-color: rgba(0, 0, 0, 0.9);
+        /* Color del borde al pasar el mouse */
+        box-shadow: 0 4px 4px;
+        /* Sombra para el efecto de profundidad */
+    }
+
+
+    /* fondo de pagina */
+
+    .fondo {
+        background-image: url(images/fondo_rosa_pastel.png);
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        /* Asegura que la imagen no se repita y hace q se estire */
+        background-repeat: no-repeat;
+        /* Asegura que el cuerpo cubra toda la ventana */
+        background-size: cover;
+        /* Centra la imagen */
+        background-position: center center;
+    }
+
+    .card {
+        text-align: center;
+        margin-bottom: 10%;
+        background-color: rgba(0, 0, 0, 0.2); /* Un color de fondo más suave y transparente */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Añade una sombra suave para darle profundidad */
+        max-width: 300px; /* Define un ancho máximo para evitar que la tarjeta se estire demasiado */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza los efectos al pasar el ratón */
+    }
+
+
+    .card-img-top {
+        border-radius: 10px 10px 10px 10px; /* Redondea solo las esquinas superiores de la imagen */
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        object-fit: cover; /* Asegura que la imagen no se deforme y se ajuste al contenedor */
+    }
+
+
+    /* Establece un tamaño fijo para las imágenes del carrusel */
+    .carousel-item img {
+        width: 90%;  /* O ajusta según necesites */
+        height: 300px; /* Altura fija para todas las imágenes */
+        object-fit: cover; /* Esto ajusta la imagen dentro del contenedor manteniendo la proporción */
+    }
+
+    /* Asegura que las tarjetas mantengan un tamaño consistente */
+    .carousel-item .card {
+        width: 18rem;
+        height: 500px; /* Altura fija para las tarjetas */
+    }
+
+
+        /* Ajusta el contenido de la tarjeta */
+
+    .card-title {
+        font-size: 1.8rem; /* Tamaño grande para resaltar el título */
+        font-weight: bold;
+        color: #ffffff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Añade sombra para darle más impacto */        
+    }
+
+    .card-text {
+        font-size: 1rem;
+        color: #d1d1d1;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .card-body button {
+        font-size: 1rem;
+        font-weight: bold;
+        color: #fff;
+        background-color: #f59ff5a6;
+        border: none;
+        border-radius: 5px;
+        padding: 8px 15px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 0%;
+    }
+
+    .card-body button:hover {
+        background-color: #ff00dd; /* Cambio de color al pasar el cursor */
+    }
+
+    .card-body button:focus {
+        outline: none;
+        box-shadow: 0 0 5px 2px rgb(226, 165, 213);
+    }
+
+}
