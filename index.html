@@ -10,61 +10,86 @@
 
 <body>
     <header>
-        <h1 class="fw-bold">En Linea 2.0</h1>   
-        <nav>
+        <h1 class="fw-bold">En Linea 2.0</h1> <!-- titulo principal de la pagina -->   
+        <nav> <!-- menu navegador de la pagina -->
             <button type="button" class="btn btn-primary">Inicio</button>
             <button type="button" class="btn btn-primary">Productos</button>
-            <button type="button" class="btn btn-primary">Carrito</button>
-        </nav>      
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Carrito</button>
+            <!--creacion del cuerpo del carrito de compra -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasRightLabel">Carrito de compras</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div id="cart-items-container">
+                        <!-- Aquí se agregarán dinámicamente los productos -->
+                    </div>
+                    <div class="cart-total">
+                        <h5>Total: $<span id="cart-total-amount">0</span></h5>
+                    </div>
 
+                    <button class="btn-comprar" onclick="enviarPedidoWhatsApp()">
+                        Iniciar Compra
+                    </button>
+                    
+                </div>
+
+            </div>
+        </nav> 
+    <!-- enlaces a redes sociales -->     
         <div class="iconos-redes">
             <a href="https://www.instagram.com/en_linea2.0/" class="icono-insta">
                 <img src="images/iconInstagram.png" alt="Instagram" >
             </a>
-            <a href="https://translate.google.com/?sl=auto&tl=es&op=translate.com" class="icono-wpp">
+            <a href="https://wa.me/+543584399691?text=Hola, me gustaría agendar tu contacto." target="_blank" class="icono-wpp">
                 <img src="images/iconWpp.png" alt="WhatsApp" >
             </a>
-        </div>
-
-        
+        </div>        
     </header>
 
 
 
-    <div class="fondo"> 
+    <main class="fondo"> 
         <!-- Carousel de Bootstrap -->
         <div id="carouselExample" class="carousel slide" data-bs-ride="carouse">
             <div class="row justify-content-center m-0"> 
                 <div class="carousel-inner ">
-                    <div class="carousel-item active">  
+                    <div class="carousel-item active">  <!-- primer producto en el carousel -->
                         <div class="card" style="width: 18rem; margin: 0 auto; top: 40px;"> 
                             <div class="card" style="width: 18rem;">
                                 <img src="images/1.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title">Aros</h5>
-                                    <p class="card-text">Aros plateados</p>
-                                    <button type="button">Agregar al carrito</button>                       
+                                    <p class="card-text">$4.000</p>
+                                    <button class="btn btn-primary" onclick="addToCart('Aros', 4000, 'images/1.jpg')">Agregar al carrito</button>                      
                                 </div>
                             </div>
                         </div>                    
                     </div>
-
+                                                      <!-- segundo producto en el carousel -->                            
                     <div class="carousel-item">  
                         <div class="card" style="width: 18rem; margin: 0 auto; top: 40px;"> 
                             <div class="card" style="width: 18rem;">
                                 <img src="images/2.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title">Aros</h5>
-                                    <p class="card-text">Aros plateados</p>
-                                    <button type="button">Agregar al carrito</button>                    
+                                    <h5 class="card-title">Aros Luna</h5>
+                                    <p class="card-text">$6.000</p>
+                                    <button class="btn btn-primary" onclick="addToCart('Aros Luna', 6000, 'images/2.jpg')">Agregar al carrito</button>                                         
                                 </div>
                             </div>
                         </div>                    
                     </div>
+                
+                    <!-- aqui se agrgan los pruductos -->
+                
+                
                 </div>
             </div>
  
-
+            
+            <!-- botones para avanzar y retroceder en el carousel -->
 
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -74,9 +99,9 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Siguiente</span>
             </button>
-        </div>    
+        </main>    
     </div>
-
+    <script src=index.js></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
