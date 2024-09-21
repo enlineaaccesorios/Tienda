@@ -309,12 +309,16 @@ left: 12%;
     .iconos-redes{
         display: flex;
         position: relative;
-        justify-content: space-between; /* Coloca los elementos en extremos opuestos */
-        bottom: 148px;
-        height: 30px;
+        justify-content: space-between;
+        height: 35px;
 
     }
 
+    .iconos-redes img {
+        position: relative;
+        width: 80px;
+    }
+       
 
 
     /* propiedades de menu-navegador*/
