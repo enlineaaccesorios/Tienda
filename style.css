@@ -2,15 +2,55 @@
     --color-prim: rgb(245, 114, 184);
 }
 
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden; /* Evita el scroll horizontal */
+    padding-top: 55px;
+    scroll-behavior: smooth;
+}
+
+
+
     /* titulo y menu-navegador  */
 
 header {
-    
-    text-align: center;
-    background-color: #ebead9;
-    height: 85px;
+    width: 100vw;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    height: 110px;
 
+    text-align: center;
+    background: lemonchiffon;
 }
+
+
+    /*propiedades de letra del titulo"*/
+
+    h1 {
+        color: var(--color-prim);
+    }
+
+    /* propiedades imagenes-iconos redes sociales*/
+
+    .iconos-redes {
+        position: relative;
+        display: grid;
+        left: 87%;
+        bottom: 65%;
+        height: 0%;
+        width: 0%;
+    }
+
+    .iconos-redes img {
+        position: relative;
+        width: 50px;
+    }
+       
+
+
+
 
 
     /* propiedades de menu-navegador*/
@@ -28,19 +68,7 @@ header {
 }
 
 
-
-.iconos-redes{
-    display: flex;
-    position: relative;
-    justify-content: space-between; /* Coloca los elementos en extremos opuestos */
-    bottom: 82px;
-}
-
-.iconos-redes img {
-    position: relative;
-    width: 56px;
-}
-    
+  
     /*propiedad de letras titulo*/
 
 h1 {
@@ -51,7 +79,7 @@ h1 {
     /* fondo de pagina */
 
 .fondo {
-    background-image: url(images/fondo_rosa_pastel.png);
+    background: beige;
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -72,6 +100,10 @@ h1 {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Añade una sombra suave para darle profundidad */
     max-width: 300px; /* Define un ancho máximo para evitar que la tarjeta se estire demasiado */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza los efectos al pasar el ratón */
+    width: 11rem;
+    margin: auto;
+    
+  
 }
 
 
@@ -93,7 +125,7 @@ h1 {
     /* Asegura que las tarjetas mantengan un tamaño consistente */
 .carousel-item .card {
     width: 18rem;
-    height: 500px; /* Altura fija para las tarjetas */
+    height: 460px; /* Altura fija para las tarjetas */
 }
 
     /* Ajusta el contenido de la tarjeta */
@@ -106,15 +138,15 @@ h1 {
 }
 
 .card-title {
-    font-size: 1.8rem; /* Tamaño grande para resaltar el título */
+    font-size: 1.3rem; /* Tamaño grande para resaltar el título */
     font-weight: bold;
-    color: #ffffff;
+    color: #f8f9fa;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Añade sombra para darle más impacto */        
 }
 
 .card-text {
     font-size: 1rem;
-    color: #d1d1d1;
+    color: #000000;
     margin-bottom: 10px;
     text-align: center;
 }
@@ -140,6 +172,40 @@ h1 {
     outline: none;
     box-shadow: 0 0 5px 2px rgb(226, 165, 213);
 }
+
+div.carousel-item.actice{
+
+    height: 100vh;
+    bottom: 39px;
+}
+
+.carousel-control-next{
+    bottom: 71%;
+}
+
+.carousel-control-prev{
+    bottom: 71%;
+}
+
+
+#productos {
+    scroll-margin-top: 150px; /* Ajusta este valor según la altura de tu header */
+}
+
+#carouselExample{
+    scroll-margin-top: 60px; 
+    padding-top: 65px;
+}
+
+
+.carousel-item.active {
+    display: block;
+    height: 100vh;
+
+}
+
+
+
 
 
 /* carrito de compra propiedades*/
@@ -289,8 +355,9 @@ left: 12%;
     /* titulo y menu navegador  */
 
     header {
-        text-align: center;
-        background-color: #ebead9;
+        position: sticky;
+        z-index: 999;
+        top: 0;
         height: 110px;
     }
 
@@ -307,16 +374,15 @@ left: 12%;
     /* propiedades imagenes-iconos redes sociales*/
 
     .iconos-redes{
-        display: flex;
-        position: relative;
-        justify-content: space-between;
-        height: 35px;
-
+        display: grid;
+        left: 92%;
+        bottom: 75%;
+        
     }
 
     .iconos-redes img {
         position: relative;
-        width: 80px;
+        width: 54px;
     }
        
 

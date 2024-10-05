@@ -12,8 +12,8 @@
     <header>
         <h1 class="fw-bold">En Linea 2.0</h1> <!-- titulo principal de la pagina -->   
         <nav> <!-- menu navegador de la pagina -->
-            <button type="button" class="btn btn-primary">Inicio</button>
-            <button type="button" class="btn btn-primary">Productos</button>
+            <button type="button" class="btn btn-primary" onclick="location.href='#carouselExample'">Inicio</button>
+            <button type="button" class="btn btn-primary" onclick="location.href='#productos'">Productos</button>
             <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Carrito</button>
             <!--creacion del cuerpo del carrito de compra -->
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
@@ -30,7 +30,7 @@
                         <h5>Total: $<span id="cart-total-amount">0</span></h5>
                     </div>
 
-                    <button class="btn-comprar" onclick="enviarPedidoWhatsApp()">
+                    <button class="btn-comprar" onclick="sendOrder()">
                         Iniciar Compra
                     </button>
                     
@@ -51,32 +51,32 @@
 
 
 
-    <main class="fondo"> 
+    <main class="fondo" id="inicio"> 
         <!-- Carousel de Bootstrap -->
         <div id="carouselExample" class="carousel slide" data-bs-ride="carouse">
             <div class="row justify-content-center m-0"> 
                 <div class="carousel-inner ">
                     <div class="carousel-item active">  <!-- primer producto en el carousel -->
-                        <div class="card" style="width: 18rem; margin: 0 auto; top: 40px;"> 
+                        <div class="card" style="width: 18rem; margin: 0 auto; top: 0px;"> 
                             <div class="card" style="width: 18rem;">
-                                <img src="images/1.jpg" class="card-img-top" alt="...">
+                                <img src="images/ArgollaDijeCoureBlanco2060.png" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title">Aros</h5>
-                                    <p class="card-text">$4.000</p>
-                                    <button class="btn btn-primary" onclick="addToCart('Aros', 4000, 'images/1.jpg')">Agregar al carrito</button>                      
+                                    <h5 class="card-title">Argolla Dije Coure Blanco</h5>
+                                    <p class="card-text">$2.060</p>
+                                    <button class="btn btn-primary" onclick="addToCart('ArgollaDijeCoureBlanco', 2060, 'images/ArgollaDijeCoureBlanco2060.png')">Agregar al carrito</button>                      
                                 </div>
                             </div>
                         </div>                    
                     </div>
                                                       <!-- segundo producto en el carousel -->                            
                     <div class="carousel-item">  
-                        <div class="card" style="width: 18rem; margin: 0 auto; top: 40px;"> 
+                        <div class="card" style="width: 18rem; margin: 0 auto; top: 0px;"> 
                             <div class="card" style="width: 18rem;">
-                                <img src="images/2.jpg" class="card-img-top" alt="...">
+                                <img src="images/ArgollaNewYork1,5cm690.png" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title">Aros Luna</h5>
-                                    <p class="card-text">$6.000</p>
-                                    <button class="btn btn-primary" onclick="addToCart('Aros Luna', 6000, 'images/2.jpg')">Agregar al carrito</button>                                         
+                                    <h5 class="card-title">Argolla New York 1,5cm 690.</h5>
+                                    <p class="card-text">$690</p>
+                                    <button class="btn btn-primary" onclick="addToCart('ArgollaNewYork1,5cm', 690, 'images/ArgollaNewYork1,5cm690.png')">Agregar al carrito</button>                                         
                                 </div>
                             </div>
                         </div>                    
@@ -99,6 +99,97 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Siguiente</span>
             </button>
+
+
+            
+            <!-- galeria de venta -->
+
+           
+                <section id="productos">
+                    <div class="container my-5">
+                        <h2 class="text-center mb-4">Nuestros Productos</h2>
+                        
+                        <div class="row g-4">
+                            <!-- Producto 1 -->
+                            <div class="col-6">
+                                <div class="card">
+                                    <img src="images/ArgollaDijeCoureBlanco2060.png" class="card-img-top" alt="Producto 1">
+                                    <div class="card-body text-center">
+                                        <p class="card-text">Argolla Dije Coure Blanco.</p>
+                                        <p class="card-text"><strong>$2.060</strong></p>
+                                        <button class="btn btn-primary" onclick="agregarAlCarrito(1)">Agregar al Carrito</button>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!-- Producto 2 -->
+                            <div class="col-6">
+                                <div class="card">
+                                    <img src="images/ArgollaNewYork1,5cm690.png" class="card-img-top" alt="Producto 2">
+                                    <div class="card-body text-center">
+                                        <p class="card-text">Argolla New York 1.5cm  .</p>
+                                        <p class="card-text"><strong>$690</strong></p>
+                                        <button class="btn btn-primary" onclick="agregarAlCarrito(2)">Agregar al Carrito</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Producto 3 -->
+                            <div class="col-6">
+                                <div class="card">
+                                    <img src="images/ArgollaNewYork2cm790.png" class="card-img-top" alt="Producto 3">
+                                    <div class="card-body text-center">
+                                        <p class="card-text">Argolla New York 2cm .</p>
+                                        <p class="card-text"><strong>$790</strong></p>
+                                        <button class="btn btn-primary" onclick="agregarAlCarrito(3)">Agregar al Carrito</button>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!-- Producto 4 -->
+                            <div class="col-6">
+                                <div class="card">
+                                    <img src="images/ArgollaWashington2cm862.png" class="card-img-top" alt="Producto 4">
+                                    <div class="card-body text-center">
+                                        <p class="card-text">ArgollaWashington 2cm .</p>
+                                        <p class="card-text"><strong>$862</strong></p>
+                                        <button class="btn btn-primary" onclick="agregarAlCarrito(4)">Agregar al Carrito</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <!-- Producto 5 -->
+                            <div class="col-6">
+                                <div class="card">
+                                    <img src="images/AroGotaAceroComun2350.png" class="card-img-top" alt="Producto 5">
+                                    <div class="card-body text-center">
+                                        <p class="card-text">Aro Gota Acero Comun</A>.</p>
+                                        <p class="card-text"><strong>$2.350</strong></p>
+                                        <button class="btn btn-primary" onclick="agregarAlCarrito(5)">Agregar al Carrito</button>
+                                    </div>
+                                </div>
+                            </div>    
+
+                        </div>
+                    </div>
+                </section>
+                
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </main>    
     </div>
     <script src=index.js></script>
