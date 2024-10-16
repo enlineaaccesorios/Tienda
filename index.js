@@ -1,4 +1,4 @@
- // Variables globales para contar los productos en el carrito y el total del carrito
+  // Variables globales para contar los productos en el carrito y el total del carrito
 let cartItemCount = 0;  // Contador de productos en el carrito
 let totalAmount = 0;    // Total acumulado del carrito
 
@@ -15,15 +15,15 @@ function addToCart(name, price, image) {
 
     // Definimos el contenido HTML del producto que se mostrará en el carrito
     cartItem.innerHTML = `
-        <div class="col-md-2">
-            <img src="${image}" alt="Imagen del Producto" class="img-fluid">  <!-- Imagen del producto -->
+        <div class="col-md-2 bloqImagen">
+            <img src="${image}" alt="Imagen del Producto" class="img-fluid imgCarrito">  <!-- Imagen del producto -->
         </div>
 
-        <div class="col-md-4">
-            <h5>${name}</h5>  <!-- Nombre del producto -->
+        <div class="col-md-4 nomProduc">
+            <h5 class = "carritoNomProduc">${name}</h5>  <!-- Nombre del producto -->
         </div>
         
-        <div class="col-md-3">
+        <div class="col-md-3 contadorProduc">
             <div class="input-group">
                 <!-- Botón para reducir la cantidad del producto -->
                 <button class="btn btn-outline-secondary" type="button" onclick="decrementQuantity(this)">-</button>
@@ -39,7 +39,7 @@ function addToCart(name, price, image) {
             $<span class="item-price" data-unit-price="${price}">${price.toLocaleString()}</span>
         </div>
                     
-        <div class="col-md-1 text-end">
+        <div class="col-md-1 text-end elimProduc">
             <!-- Botón para eliminar el producto del carrito -->
             <button class="btn btn-delete" onclick="removeItem('${itemId}', ${price})">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
@@ -128,44 +128,36 @@ function recalculateTotal() {
 
 
 
-// Función para enviar los productos del carrito al backend para validación de precios
-async function sendOrder() {
+// Función para enviar los productos del carrito a WhatsApp
+function sendOrderToWhatsApp() {
     // Obtener los productos en el carrito
     const items = document.querySelectorAll('.cart-item');
-    const products = [];
-
-    // Iterar sobre los productos en el carrito para extraer nombre y precio
+    let message = 'Hola, quisiera hacer un pedido con los siguientes productos:%0A';  // Mensaje inicial para WhatsApp
+    
+    // Iterar sobre los productos en el carrito para extraer nombre, precio y cantidad
     items.forEach(item => {
         const name = item.querySelector('h5').textContent;  // Nombre del producto
-        const price = parseFloat(item.querySelector('.item-price').getAttribute('data-unit-price'));  // Precio del producto
+        const price = parseFloat(item.querySelector('.item-price').getAttribute('data-unit-price'));  // Precio unitario del producto
         const quantity = parseInt(item.querySelector('.cart-quantity-input').value);  // Cantidad
 
-        // Agregar los productos al array de productos
-        products.push({
-            name: name,
-            price: price * quantity  // Multiplicar precio por cantidad
-        });
+        // Agregar los detalles de cada producto al mensaje
+        message += `- ${name}: ${quantity} x $${price.toLocaleString()} = $${(price * quantity).toLocaleString()}%0A`;
     });
 
-    // Enviar la lista de productos al servidor para validación de precios
-    const response = await fetch('/.netlify/functions/validate-prices', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(products)  // Convertir los productos a JSON
-    });
+    // Añadir el total del carrito al mensaje
+    message += `%0ATotal: $${totalAmount.toLocaleString()}`;
 
-    const result = await response.json();
+    // Número de teléfono de WhatsApp (con código de país)
+    const phoneNumber = '549123456789';  // Reemplaza esto con tu número de WhatsApp
+    
+    // Crear el enlace de WhatsApp con el mensaje
+    const whatsappLink = `https://wa.me/${phoneNumber}?text=${message}`;
 
-    // Si la validación es correcta, redirigir a WhatsApp con el enlace generado
-    if (response.status === 200) {
-        window.location.href = result.link;  // Redirigir a WhatsApp con el enlace del pedido
-    } else {
-        // Mostrar un mensaje de error si los precios han sido modificados
-        alert(result.message);
-    }
+    // Redirigir al usuario a WhatsApp
+    window.location.href = whatsappLink;
 }
 
-// Asignar la función `sendOrder` al botón "Iniciar Compra"
-document.getElementById('iniciar-compra').addEventListener('click', sendOrder);
+// Asignar la función `sendOrderToWhatsApp` al botón "Iniciar Compra"
+document.getElementById('iniciar-compra').addEventListener('click', sendOrderToWhatsApp);
+
+
