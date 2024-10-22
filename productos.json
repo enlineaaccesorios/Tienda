@@ -1,0 +1,23 @@
+[
+    {
+      "imagenProducto": "images/ArgollaDijeCoureBlanco2060.png",
+      "nombreProducto": "Argolla Dije Coure Blanco",
+      "precioProducto": 2060
+    },
+    {
+      "imagenProducto": "images/ArgollaNewYork1,5cm690.png",
+      "nombreProducto": "Argolla New York 1,5cm",
+      "precioProducto": 690
+    },
+    {
+      "imagenProducto": "images/ArgollaNewYork2cm790.png",
+      "nombreProducto": "Argolla New York 2cm",
+      "precioProducto": 790
+    },
+    {
+      "imagenProducto": "images/ArgollaWashington2cm862.png",
+      "nombreProducto": "Argolla Washington 2cm",
+      "precioProducto": 862
+    }
+  ]
+  
