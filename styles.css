@@ -77,12 +77,23 @@ header{
 }
 
 
+.btn-check:focus+.btn-primary, .btn-primary:focus {
+    color:none;
+    background-color:none;
+    border-color: none; 
+    box-shadow: none;
+
+}
+
+
+
+
 .iconos-redes {
     
     position: relative;
     display: flex;
     justify-content: space-between;
-    bottom: 478px;
+    top: 34px;
 }
 
 
@@ -104,19 +115,6 @@ div#offcanvasRight.offcanvas.offcanvas-end.show{
 
 /*posicionamiento de elementos en header*/
 
-.offcanvas-header{
-
-}
-
-
-.align-items-center{
-
-
-}
-
-
-
-
 /*tamaño de la imagen*/
 .img-fluid {
     width: 100%;
@@ -124,10 +122,6 @@ div#offcanvasRight.offcanvas.offcanvas-end.show{
     height: 87px;
 }
 
-.cart-item{
-
-
-}
 
 .bloqImagen{
     width: 34%;
@@ -216,7 +210,7 @@ p.quieneSomos{
     line-height: 1.6; /* Espaciado entre líneas para mejorar la legibilidad */
     color: #000000; /* Color de texto */
     background-color: #f9f9f9; /* Color de fondo suave */
-    padding: 20px; /* Espaciado interno */
+    padding: 10px 10px; /* Espaciado interno */
     border-radius: 10px; /* Bordes redondeados */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
     max-width: 800px; /* Limitar el ancho para que el texto sea más legible */
@@ -269,7 +263,7 @@ main{
     /*      CAROCEL O SLIDE        */
 
 .carousel{
-    margin-top: 124px;
+    margin-top: 98px;
     height: 100vh;
 
 }
@@ -297,5 +291,104 @@ div.card{
 /*margen de abajo de galeria*/
 .my-5{
     margin-bottom: 0rem !important;
+}
+
+
+
+
+/* Media queries para pantallas más grande (notebook) */
+@media (min-width: 480px) {
+    
+
+header{
+    height: 141px;
+}
+
+.menunavegador{
+    justify-content: space-around;
+    flex-wrap: wrap;
+    position: relative;
+    width: 64%;
+    align-self: center;
+    display: flex;    
+}
+
+.btnmenuNav {
+    height: 45px;
+    width: 90px;
+}
+
+
+
+.logo-container{
+    background-image: url(images/8.jpg);
+    width: 141px;
+    height: 141px;
+    box-sizing: border-box;
+    background-size: contain;
+    order: 0;
+}
+
+
+
+.logo-container2{
+    background-image: url(images/8.jpg);
+    width: 141px;
+    height: 141px;
+    box-sizing: border-box;
+    background-size: contain;
+    order: 2;
+}
+
+.carousel{
+    margin-top: 143px;
+}
+
+
+.carousel-control-prev{
+    width: 50px;
+    height: 350px;
+    margin-left: 200px;
+}
+
+.carousel-control-next{
+    width: 50px;
+    height: 350px;
+    margin-right: 200px;
+}
+
+h2.quieneSomos{
+    font-size: 30px;
+    text-shadow: 0 0 0px #FF95D6, 0 0 1px #FF6677, 0 0 1px #FF3376, 0 0 1px #FF335B;
+}
+
+p.quieneSomos{
+    font-size: 16px;
+    background-color: #f4f1c4;
+    box-shadow: 0 4px 8px rgb(201 0 98);
+
+}
+
+.iconos-redes{
+    bottom: 420px;
+}
+
+.iconos-redes img {
+    
+    width: 50px;
+}
+
+h2.text-center{
+    font-size: 50px;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    color: #333;
+    color: black;
+    margin-top: 100px;
+}
+
+.col-6{
+    width: 25%;
+}
 
 }
