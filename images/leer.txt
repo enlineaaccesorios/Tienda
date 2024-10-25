@@ -1,0 +1,1 @@
+En este directorio se cargaran imagenes de los productos,logos de la empresa e iconos de redes socilaes.
