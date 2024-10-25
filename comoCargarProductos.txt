@@ -1,0 +1,31 @@
+Guía para Cargar Nuevos Productos en la Tienda
+
+1. Cargar las Imágenes del Producto
+  Haz clic en la carpeta images.
+  Selecciona el botón "Add file" (Agregar archivo) y luego "Upload files" (Subir archivos).
+  Haz clic en "Choose your files" (Elegir tus archivos) y selecciona la imagen del producto en tu computadora.
+  Nombra la imagen igual que el nombre del producto, sin espacios (por ejemplo, ArgollaNewYork2cm.png).
+  Haz clic en "Commit changes" (Confirmar cambios) para subir la imagen.
+
+  2. Actualizar el Archivo producto.json
+     Regresa al repositorio y haz clic en el archivo producto.json.
+     Haz clic en el ícono de lápiz (Edit this file) para editar el archivo.
+     Desplázate al final del archivo y agrega la nueva información del producto, siguiendo este formato: json
+
+    Copiar código
+  {
+     "imagenProducto": "images/NOMBRE_DE_LA_IMAGEN.png",
+     "nombreProducto": "Nombre del Producto",
+     "precioProducto": PRECIO
+  }
+
+NOMBRE_DE_LA_IMAGEN.png: Es el nombre exacto de la imagen que subiste.
+Nombre del Producto: Es el nombre del producto que aparecerá en la tienda.
+PRECIO: Es el precio del producto sin comas ni puntos.
+Asegúrate de que cada producto esté separado por una coma, excepto el último.
+
+Haz clic en "Commit changes" (Confirmar cambios) para guardar.
+
+3. Confirmar que Todo Está Correcto
+  Después de hacer los cambios, verifica que el archivo producto.json se actualizó correctamente.
+  Ahora el nuevo producto debería aparecer en la tienda en unos minutos.
