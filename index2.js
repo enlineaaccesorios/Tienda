@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", function() {
                             <div class="card-body">
                                 <h5 class="card-title">${producto.nombreProducto}</h5>
                                 <p class="card-text">$${producto.precioProducto}</p>
-                                <button class="btn btn-primary btnCarritocarousel" onclick="addToCart('${producto.nombre}', ${producto.precio}, '${producto.imagen}')">Agregar al carrito</button>
+                                <button class="btn btn-primary btnCarritocarousel" onclick="addToCart('${producto.nombreProducto}', ${producto.precioProducto}, '${producto.imagenProducto}')">Agregar al carrito</button>
                             </div>
                         </div>
                     </div>

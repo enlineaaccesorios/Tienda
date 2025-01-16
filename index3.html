@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>En Linea</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://apis.google.com/js/api.js"></script>
+
+</head>
+
+
+  <!-- Al cargar la página, se cargará la API  onload="onGAPILoad()" -->
+
+<body>
+    <header>
+        <div class = "header-content">
+            <!-- Imagen a la izquierda -->
+            <div class="logo-container">
+                <!-- caja contenedora de logo 1  -->
+            </div>
+            <div class="logo-container2">
+                <!-- caja contenedora de logo 2  -->
+            </div>
+            <nav class="menunavegador"> <!-- Menú navegador -->
+                <button type="button" class="btn btn-primary btnmenuNav" onclick="location.href='#inicioMain'">Inicio</button>
+                <button type="button" class="btn btn-primary btnmenuNav" onclick="location.href='#productos'">Productos</button>
+                <button type="button" class="btn btn-primary btnmenuNav"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Carrito</button>
+            </nav>
+            
+                       <!-- Carrito Offcanvas -->
+           <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title " id="offcanvasRightLabel">Carrito de compras</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div id="cart-items-container">
+
+                         <!-- Aquí se agregarán dinámicamente los productos -->
+                        </div>
+                            <div class="cart-total">
+                                <h5>Total: $<span id="cart-total-amount">0</span></h5>
+                            </div>
+                    <button class="btn-comprar" id="iniciar-compra" onclick="sendOrderToWhatsApp()">Iniciar Compra</button>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <main id="inicioMain">
+        <!-- Carousel de Bootstrap -->
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carouse">
+            <div class="row justify-content-center m-0"> 
+                <div class="carousel-inner ">
+                    <div class="carousel-item active">  <!-- primer producto en el carousel -->
+                        <div class="card" style="width: 12rem; margin: 0 auto; top: 0px;"> 
+                            <div class="card" style="width: 12rem;">
+                                <img src="images/ArgollaDijeCoureBlanco2060.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Argolla Dije Coure Blanco</h5>
+                                    <p class="card-text">$2.060</p>
+                                    <button class="btn btn-primary btnCarritocarousel" onclick="addToCart('ArgollaDijeCoureBlanco', 2060, 'images/ArgollaDijeCoureBlanco2060.png')">Agregar al carrito</button>                      
+                                </div>
+                            </div>
+                        </div>                    
+                    </div>
+                                                    <!-- segundo producto en el carousel -->                            
+                    <div class="carousel-item">  
+                        <div class="card" style="width: 12rem; margin: 0 auto; top: 0px;"> 
+                            <div class="card" style="width: 12rem;">
+                                <img src="images/ArgollaNewYork1,5cm690.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Argolla New York 1,5cm 690.</h5>
+                                    <p class="card-text">$690</p>
+                                    <button class="btn btn-primary btnCarritocarousel" onclick="addToCart('ArgollaNewYork1,5cm', 690, 'images/ArgollaNewYork1,5cm690.png')">Agregar al carrito</button>                                         
+                                </div>
+                            </div>
+                        </div>                    
+                    </div>
+                
+                    <!-- aqui se agrgan los pruductos -->
+                
+                </div>
+            </div>
+            <!-- botones para avanzar y retroceder en el carousel -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+            <div class=" quieneSomos" >
+                <h2 class="quieneSomos">Quienes Somos</h2>
+                <p class="quieneSomos"> En Linea 2.0 , nos especializamos en ofrecer accesorios únicos y de calidad para mujeres que buscan destacar su estilo personal. 
+                    Creemos que los detalles hacen la diferencia, por eso seleccionamos cuidadosamente cada pieza, desde elegantes collares hasta pulseras y anillos que reflejan las últimas tendencias.
+                    Nuestro objetivo es empoderar a cada mujer a través de la moda, brindándole opciones que resalten su belleza y confianza. Ya sea que busques algo para el día a día o para una ocasión especial, 
+                    estamos aquí para ayudarte a encontrar ese accesorio perfecto que complemente tu look.
+                </p>
+            </div>
+    
+    
+        </div>
+
+
+        
+
+
+                    <!-- enlaces a redes sociales -->     
+        <div class="iconos-redes">
+            <a href="https://www.instagram.com/en_linea2.0/" class="icono-insta">
+                <img src="images/iconInstagram.png" alt="Instagram" >
+            </a>
+            <a href="https://wa.me/+543584399691?text=Hola, me gustaría agendar tu contacto." target="_blank" class="icono-wpp">
+               <img src="images/iconWpp.png" alt="WhatsApp" >
+            </a>
+        </div>           
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- GALERIA DE VENTA-->
+        <section id="productos" style="padding-top:60px">
+            <div class="container my-5">
+                <h2 class="text-center mb-4" >Nuestros Productos</h2>                   
+                <div class="row g-4">
+                    <!-- Producto 1 -->
+                    <div class="col-6">
+                        <div class="card">
+                            <img src="images/ArgollaDijeCoureBlanco2060.png" class="card-img-top" alt="Producto 1">
+                                <div class="card-body text-center">
+                                    <p class="card-text">Argolla Dije Coure Blanco.</p>
+                                    <p class="card-text"><strong>$2.060</strong></p>
+                                    <button class="btn btn-primary btnCarritogaleria" onclick="addToCart('Argolla Dije Coure Blanco', 2060, 'images/ArgollaDijeCoureBlanco2060.png')">Agregar al carrito</button>  
+                                </div>
+                            </div>
+                    </div>
+            
+                        <!-- Producto 2 -->
+                        <div class="col-6">
+                            <div class="card">
+                                <img src="images/ArgollaNewYork1,5cm690.png" class="card-img-top" alt="Producto 2">
+                                <div class="card-body text-center">
+                                    <p class="card-text">Argolla New York 1.5cm  .</p>
+                                    <p class="card-text"><strong>$690</strong></p>
+                                    <button class="btn btn-primary btnCarritogaleria" onclick="addToCart('Argolla New York 1.5cm  ', 690, 'images/ArgollaNewYork1,5cm690.png')">Agregar al carrito</button>  
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Producto 3 -->
+                        <div class="col-6">
+                            <div class="card">
+                                <img src="images/ArgollaNewYork2cm790.png" class="card-img-top" alt="Producto 3">
+                                <div class="card-body text-center">
+                                    <p class="card-text">Argolla New York 2cm .</p>
+                                    <p class="card-text"><strong>$790</strong></p>
+                                    <button class="btn btn-primary btnCarritogaleria" onclick="agregarAlCarrito(1)">Agregar al Carrito</button>  
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Producto 4 -->
+                        <div class="col-6">
+                            <div class="card">
+                                <img src="images/ArgollaWashington2cm862.png" class="card-img-top" alt="Producto 4">
+                                <div class="card-body text-center">
+                                    <p class="card-text">ArgollaWashington 2cm .</p>
+                                    <p class="card-text"><strong>$862</strong></p>
+                                    <button class="btn btn-primary btnCarritogaleria" onclick="agregarAlCarrito(1)">Agregar al Carrito</button>  
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <!-- Producto 5 -->
+                        <div class="col-6">
+                            <div class="card">
+                                <img src="images/AroGotaAceroComun2350.png" class="card-img-top" alt="Producto 5">
+                                <div class="card-body text-center">
+                                    <p class="card-text">Aro Gota Acero Comun</A>.</p>
+                                    <p class="card-text"><strong>$2.350</strong></p>
+                                    <button class="btn btn-primary btnCarritogaleria" onclick="agregarAlCarrito(1)">Agregar al Carrito</button>  
+                                </div>
+                            </div>
+                        </div>    
+
+                    </div>
+                </div>
+        </section>
+    </main>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src=/google-sheets-node/index.js></script>
+    <script src=index2.js></script>
+</body>
+</html>

@@ -24,10 +24,27 @@ header{
     background-size: contain;
 }
 
+@media (min-width: 320px) and (max-width:375px){
+
+    .logo-container{
+        background: no-repeat;
+        background-image: url(images/8.jpg);
+        
+        width: 100px;
+        height: 100px;
+        box-sizing: border-box;
+        background-size: contain;
+
+
+    }    
+}
+
+
+
 .menunavegador{
     margin: auto;
     align-self: center;
-    display: block;
+    display: flex;
 }
 
 .btn-primary {
@@ -65,7 +82,7 @@ header{
 
 /* Media queries especial para botones menu navegador : pantallas más grande (celular) */
 
-@media (min-width: 375px) and (max-width: 425px) {
+@media (min-width: 376px) and (max-width: 425px) {
     .btnmenuNav{
         height: 32px;
         width:89px;
@@ -78,10 +95,9 @@ header{
 
 
 .btn-check:focus+.btn-primary, .btn-primary:focus {
-    color:none;
-    background-color:none;
-    border-color: none; 
-    box-shadow: none;
+    box-shadow: unset !important;
+    background-color: rgb(241 0 118) !important; /* Color de fondo al pasar el mouse */
+    border-color: rgba(0, 0, 0, 0.9) !important; ;/* Color del borde al pasar el mouse */
 
 }
 
@@ -185,9 +201,6 @@ h5.carritoNomProduc{
 }
 
 
-
-
-
 /*SECCION QUIENES SOMOS*/
 
 /* Estilo para el título h2 */
@@ -209,12 +222,12 @@ p.quieneSomos{
     font-size: 11px;
     line-height: 1.6; /* Espaciado entre líneas para mejorar la legibilidad */
     color: #000000; /* Color de texto */
-    background-color: #f9f9f9; /* Color de fondo suave */
     padding: 10px 10px; /* Espaciado interno */
     border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
     max-width: 800px; /* Limitar el ancho para que el texto sea más legible */
     margin: 0 auto; /* Centrar el párrafo */
+    background-color: #f4f1c4;
+    box-shadow: 0 4px 8px rgb(201 0 98);
     
 }
 
@@ -330,16 +343,6 @@ header{
 }
 
 
-
-.logo-container2{
-    background-image: url(images/8.jpg);
-    width: 141px;
-    height: 141px;
-    box-sizing: border-box;
-    background-size: contain;
-    order: 2;
-}
-
 .carousel{
     margin-top: 143px;
 }
@@ -348,13 +351,13 @@ header{
 .carousel-control-prev{
     width: 50px;
     height: 350px;
-    margin-left: 200px;
+    margin-left: 290px;
 }
 
 .carousel-control-next{
     width: 50px;
     height: 350px;
-    margin-right: 200px;
+    margin-right: 290px;
 }
 
 h2.quieneSomos{
