@@ -17,6 +17,7 @@ header{
 }
 
 .logo-container{
+    background: no-repeat;
     background-image: url(images/8.jpg);
     width: 100px;
     height: 100px;
